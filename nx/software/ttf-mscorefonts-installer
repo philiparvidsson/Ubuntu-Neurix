@@ -8,5 +8,5 @@ nxInstall() {
     sudo apt-get install -qqy ./$deb
     rm $deb
 
-    fc-cache -fv
+    #fc-cache -fv
 }
