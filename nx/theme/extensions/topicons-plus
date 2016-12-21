@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Installing Topicons plus extension..."
+
+    cd /tmp
+    git clone https://github.com/phocean/TopIcons.git
+    cd TopIcons
+    make
+
+    gnome-shell-extension-tool -e TopIcons@phocean.net
+
+    local ext="/org/gnome/shell/extensions/topicons/"
+    dconf write "${ext}icon-size" 20
+
+    (nohup gnome-shell --replace < /dev/null > /dev/null 2>&1 &)
+}

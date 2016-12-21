@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 nxInstall() {
-    nxPrint "Installing dash-to-dock extension..."
+    nxPrint "Installing Dash to dock extension..."
 
     git clone -q https://github.com/micheleg/dash-to-dock.git /tmp/dash-to-dock
 
