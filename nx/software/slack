@@ -15,7 +15,6 @@ nxInstall() {
     local regex="slack-desktop-[0-9\.]+-amd64\.deb"
     local deb=$(wget -O- -q $url | egrep -o $regex | sort -V  | tail -1)
 
-    wget -O $deb -q https://downloads.slack-edge.com/linux_releases/$deb
-    sudo apt-get install -qqy ./$deb
-    rm $deb
+    wget -O /tmp/$deb -q https://downloads.slack-edge.com/linux_releases/$deb
+    sudo apt-get install -qqy /tmp/$deb
 }

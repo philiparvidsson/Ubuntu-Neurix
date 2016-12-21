@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+nxConfig() {
+    nxConfirm google-chrome "Install Google Chrome?" yes
+
+    $(nxConfirm google-chrome) &&
+        nxConfirm google-chrome-extensions \
+                  "Install Google Chrome extensions?" yes
+}
+
+nxInstall() {
+    if ! $(nxConfirm google-chrome); then
+        return
+    fi
+
+    nxPrint "Installing Google Chrome..."
+
+    local key='https://dl.google.com/linux/linux_signing_key.pub'
+    wget -O - -q $key | sudo apt-key add -
+
+    local deb='google-chrome-stable_current_amd64.deb'
+    wget -O /tmp/$deb -q https://dl.google.com/linux/direct/$deb
+    sudo apt-get install -qqy /tmp/$deb
+
+    mkdir -p ~/.config/google-chrome
+    touch ~/.config/google-chrome/First\ Run
+
+    mkdir -p .config/google-chrome/Default
+    local user=$(tr '[:lower:]' '[:upper:]' <<< ${USER:0:1})${USER:1}
+    cat Preferences.json | sed "s/%Username%/${user}/g" > .config/google-chrome/Default/Preferences
+
+    if $(nxConfirm google-chrome-extensions); then
+        nxPrint "Installing Google Chrome extensions..."
+
+        sudo mkdir -p /opt/google/chrome
+        sudo cp -rf extensions /opt/google/chrome/
+    fi
+}

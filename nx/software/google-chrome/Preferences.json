@@ -1,0 +1,23 @@
+{
+    "alternate_error_pages": {
+        "enabled": false
+    },
+    "autofill": {
+        "enabled": false
+    },
+    "intl": {
+        "accept_languages": "en-US,en,sv"
+    },
+    "profile": {
+        "block_third_party_cookies": true,
+        "name": "%Username%",
+        "password_manager_enabled": false,
+        "default_content_setting_values": {
+            "plugins": 2
+        }
+    },
+    "spellcheck": {
+	"dictionaries": ["en-US", "sv"]
+    },
+    "translate_blocked_languages": ["sv"]
+}

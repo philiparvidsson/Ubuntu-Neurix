@@ -11,9 +11,8 @@ nxInstall() {
 
     nxPrint "Installing Telegram..."
 
-    wget -q --trust-server-names https://telegram.org/dl/desktop/linux
-    tar -xf tsetup.*.tar.xz
-    rm tsetup.*.tar.xz
+    wget -O /tmp/tsetup.tar.xz -q https://telegram.org/dl/desktop/linux
+    tar -xf /tmp/tsetup.tar.xz
     sudo mv Telegram /opt/
 
     mkdir -p ~/.local/share/applications
