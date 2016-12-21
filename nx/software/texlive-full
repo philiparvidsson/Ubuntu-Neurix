@@ -10,5 +10,5 @@ nxInstall() {
     fi
 
     nxPrint "Installing TeX Live..."
-    sudo apt-get install -qqy texlive-full
+    sudo apt-get -qqy install texlive-full
 }

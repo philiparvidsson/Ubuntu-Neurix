@@ -10,5 +10,5 @@ nxInstall() {
     fi
 
     nxPrint "Removing LibreOffice..."
-    sudo apt-get purge -qqy libreoffice*
+    sudo apt-get -qqy purge libreoffice*
 }

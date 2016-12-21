@@ -3,7 +3,7 @@
 nxInstall() {
     nxPrint "Installing show-term script..."
 
-    sudo apt-get install -qqy wmctrl
+    sudo apt-get -qqy install wmctrl
     mkdir -p ~/bin
     cp show-term ~/bin/
     chmod +x ~/bin/show-term

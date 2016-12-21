@@ -20,7 +20,7 @@ nxInstall() {
 
     local deb='google-chrome-stable_current_amd64.deb'
     wget -O /tmp/$deb -q https://dl.google.com/linux/direct/$deb
-    sudo apt-get install -qqy /tmp/$deb
+    sudo apt-get -qqy install /tmp/$deb
 
     mkdir -p ~/.config/google-chrome
     touch ~/.config/google-chrome/First\ Run

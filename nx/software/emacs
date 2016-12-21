@@ -13,7 +13,7 @@ nxInstall() {
     fi
 
     nxPrint "Installing Emacs..."
-    sudo apt-get install -qqy emacs
+    sudo apt-get -qqy install emacs
 
     if $(nxConfirm emacs-config); then
         nxPrint "Installing Philip's Emacs config..."

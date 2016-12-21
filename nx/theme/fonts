@@ -3,7 +3,7 @@
 nxInstall() {
     nxPrint "Installing fonts..."
 
-    sudo apt-get install -qqy fonts-noto fonts-roboto
+    sudo apt-get -qqy install fonts-noto fonts-roboto
 
     #fc-cache -fv
 

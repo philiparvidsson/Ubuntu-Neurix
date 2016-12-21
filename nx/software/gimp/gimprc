@@ -1,0 +1,27 @@
+# GIMP gimprc
+#
+# This is your personal gimprc file.  Any variable defined in this file takes
+# precedence over the value defined in the system-wide gimprc:
+# /etc/gimp/2.0/gimprc
+# Most values can be set within GIMP by changing some options in the
+# Preferences dialog.
+
+(default-image
+    (width 1280)
+    (height 720)
+    (unit pixels)
+    (xresolution 72.000000)
+    (yresolution 72.000000)
+    (resolution-unit inches)
+    (image-type rgb)
+    (fill-type background-fill)
+    (comment "Created with GIMP"))
+(show-help-button no)
+(theme "Small")
+(toolbox-foo-area yes)
+(toolbox-wilber no)
+(undo-levels 50)
+(undo-size 512M)
+(user-manual-online yes)
+
+# end of gimprc

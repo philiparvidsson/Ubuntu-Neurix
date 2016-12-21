@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+nxConfig() {
+    nxConfirm gimp "Install GIMP?" yes
+}
+
+nxInstall() {
+    sudo apt-get -qqy install gimp
+}
