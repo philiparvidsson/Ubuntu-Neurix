@@ -6,8 +6,27 @@ exec > /dev/null
 
 . nxlib
 
+nxPrint "NX Linux by Philip Arvidsson <philip@philiparvidsson.com>"
+nxPrint ""
+nxPrint "We will begin by asking you a few questions to configure your\
+         installation."
+nxPrint "  If you want to use default settings, just keep pressing enter."
+nxPrint ""
+
+sleep 1
+
 nxFunc=nxConfig
 nxExecDir nx
+
+nxPrint ""
+nxPrint "Great! Your system is going to be reconfigured."
+nxPrint ""
+nxPrint "Installation begins in five seconds"
+nxPrint ""
+nxPrint "- PRESS ^C NOW TO CANCEL -"
+nxPrint ""
+
+sleep 5
 
 nxFunc=nxInstall
 nxExecDir nx

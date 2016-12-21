@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Installing sysupd script..."
+
+    mkdir -p ~/bin
+    cp sysupd ~/bin/
+    chmod +x ~/bin/sysupd
+}
