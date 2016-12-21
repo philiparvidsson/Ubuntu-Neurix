@@ -2,5 +2,5 @@
 
 nxInstall() {
     nxPrint "Removing bundled games..."
-    sudo apt-get purge aisleriot gnome-mahjongg gnome-mines gnome-sudoku -y
+    sudo apt-get purge -qqy aisleriot gnome-mahjongg gnome-mines gnome-sudoku
 }

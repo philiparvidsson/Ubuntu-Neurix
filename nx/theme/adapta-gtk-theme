@@ -6,7 +6,9 @@ nxInstall() {
     sudo add-apt-repository ppa:tista/adapta -y
     sudo apt update
 
-    sudo apt install adapta-gtk-theme fonts-noto fonts-roboto -y
+    sudo apt-get install adapta-gtk-theme fonts-noto fonts-roboto -y
+
+    fc-cache -fv
 
     gsettings set org.gnome.desktop.interface gtk-theme Adapta-Eta
     gsettings set org.gnome.shell.extensions.user-theme name Adapta-Eta

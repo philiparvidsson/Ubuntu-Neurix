@@ -2,5 +2,5 @@
 
 nxInstall() {
     nxPrint "Installing tlp..."
-    sudo apt-get install tlp -y
+    sudo apt-get install -qqy tlp
 }

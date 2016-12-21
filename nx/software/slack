@@ -16,6 +16,6 @@ nxInstall() {
     local deb=$(wget -O- -q $url | egrep -o $regex | sort -V  | tail -1)
 
     wget -O $deb -q https://downloads.slack-edge.com/linux_releases/$deb
-    sudo apt-get install ./$deb -y
+    sudo apt-get install -qqy ./$deb
     rm $deb
 }
