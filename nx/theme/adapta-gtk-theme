@@ -6,15 +6,8 @@ nxInstall() {
     sudo add-apt-repository -y ppa:tista/adapta
     sudo apt update
 
-    sudo apt-get install -qqy adapta-gtk-theme fonts-noto fonts-roboto
-
-    fc-cache -fv
+    sudo apt-get install -qqy adapta-gtk-theme
 
     gsettings set org.gnome.desktop.interface gtk-theme Adapta-Eta
     gsettings set org.gnome.shell.extensions.user-theme name Adapta-Eta
-
-    gsettings set org.gnome.desktop.interface document-font-name "Roboto 10"
-    gsettings set org.gnome.desktop.interface font-name "Noto Sans 10"
-    gsettings set org.gnome.desktop.interface monospace-font-name "Ubuntu Mono 10"
-    gsettings set org.gnome.desktop.wm.preferences titlebar-font "Noto Sans Bold 10"
 }

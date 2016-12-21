@@ -2,9 +2,9 @@
 
 export DEBIANT_FRONTEND="noninteractive"
 
-. nxlib
-
 exec > /dev/null
+
+. nxlib
 
 nxFunc=nxConfig
 nxExecDir nx

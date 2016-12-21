@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    git clone -q https://github.com/micheleg/dash-to-dock.git
+
+    cd dash-to-dock
+
+    make && make install
+
+    cd ..
+    rm -rf dash-to-dock
+
+    gnome-shell-extension-tool -e dash-to-dock@micxgx.gmail.com
+
+    local ext='/org/gnome/shell/extensions/dash-to-dock/'
+
+    dconf write "${ext}background-color" "'#000000'"
+    dconf write "${ext}background-opacity" 0.4
+    dconf write "${ext}click-action" "'minimize'"
+    dconf write "${ext}custom-background-color" true
+    dconf write "${ext}custom-theme-customize-running-dots" true
+    dconf write "${ext}custom-theme-running-dots" true
+    dconf write "${ext}dock-position" "'BOTTOM'"
+    dconf write "${ext}intellihide" false
+    dconf write "${ext}opaque-background" true
+    dconf write "${ext}shift-click-action" "'launch'"
+    dconf write "${ext}show-apps-at-top" true
+
+    (nohup gnome-shell --replace < /dev/null > /dev/null 2>&1 &)
+}

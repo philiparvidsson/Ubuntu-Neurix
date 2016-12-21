@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-sudo apt-get update -y
-sudo apt-get autoclean -y
-sudo apt-get autoremove -y
-sudo apt-get upgrade -y
+nxInstall() {
+    sudo apt-get -qqy update
+    sudo apt-get -qqy autoclean
+    sudo apt-get -qqy autoremove
+    sudo apt-get -qqy upgrade
+}

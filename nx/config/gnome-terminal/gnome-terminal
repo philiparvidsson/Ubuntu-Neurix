@@ -38,4 +38,7 @@ nxInstall() {
 
     echo >> ~/.bashrc
     cat bashrc >> ~/.bashrc
+
+    mkdir -p ~/.config/gtk-3.0
+    cp gtk.css ~/.config/gtk-3.0/
 }
