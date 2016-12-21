@@ -6,12 +6,12 @@ exec > /dev/null
 
 . nxlib
 
-nxPrint "NX Linux by Philip Arvidsson <philip@philiparvidsson.com>"
-nxPrint ""
-nxPrint "We will begin by asking you a few questions to configure your\
-         installation."
-nxPrint "  If you want to use default settings, just keep pressing enter."
-nxPrint ""
+nxPrint "\
+NX Linux by Philip Arvidsson <philip@philiparvidsson.com>
+
+We will begin by asking you a few questions to configure your installation.
+  If you want to use default settings, just keep pressing enter.
+"
 
 sleep 1
 
