@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 nxInstall() {
+    nxPrint "Configuring user directories..."
+
     rm -rf ~/Documents
     rm -rf ~/Music
     rm -rf ~/Public
