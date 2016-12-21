@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Installing Paper icon theme..."
+
+    sudo add-apt-repository ppa:snwh/pulp -y
+    sudo apt update
+
+    sudo apt install paper-icon-theme -y
+
+    gsettings set org.gnome.desktop.interface icon-theme "Paper"
+}

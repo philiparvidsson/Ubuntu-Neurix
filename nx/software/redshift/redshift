@@ -10,7 +10,7 @@ nxInstall() {
     fi
 
     nxPrint "Installing redshift..."
-    sudo apt install redshift -y
+    sudo apt-get install redshift -y
 
     mkdir -p ~/.config/autostart
     cp redshift.desktop ~/.config/autostart/

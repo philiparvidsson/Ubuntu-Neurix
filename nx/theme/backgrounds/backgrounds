@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Installing backgrounds..."
+
+    mkdir -p ~/Pictures
+    cp -rf Backgrounds ~/Pictures/
+
+    local s=$(ls ~/Pictures/Backgrounds | head -1)
+    local bg="file:///home/$USER/Pictures/Backgrounds/$s"
+
+    gsettings set org.gnome.desktop.background picture-uri $bg
+    gsettings set org.gnome.desktop.screensaver picture-uri $bg
+}

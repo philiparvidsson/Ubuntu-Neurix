@@ -2,5 +2,5 @@
 
 nxInstall() {
     nxPrint "Installing unrar..."
-    sudo apt install unrar -y
+    sudo apt-get install unrar -y
 }

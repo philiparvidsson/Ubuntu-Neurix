@@ -10,5 +10,5 @@ nxInstall() {
     fi
 
     nxPrint "Removing Firefox..."
-    sudo apt purge firefox -y
+    sudo apt-get purge firefox -y
 }
