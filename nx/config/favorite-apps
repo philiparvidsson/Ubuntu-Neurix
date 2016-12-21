@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Configuring favorite apps..."
+    dconf write /org/gnome/shell/favorite-apps "['google-chrome.desktop',      \
+                                                 'telegramdesktop.desktop',    \
+                                                 'slack.desktop',              \
+                                                 'org.gnome.Terminal.desktop', \
+                                                 'emacs24.desktop']"
+}

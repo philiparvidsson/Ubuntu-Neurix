@@ -5,5 +5,9 @@ nxConfig() {
 }
 
 nxInstall() {
+    if ! $(nxConfirm gimp); then
+        return
+    fi
+
     sudo apt-get -qqy install gimp
 }

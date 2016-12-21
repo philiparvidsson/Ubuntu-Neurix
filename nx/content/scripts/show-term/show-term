@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+wmctrl -F -a Terminal
+if [ $? -eq 1 ]; then
+   gnome-terminal
+fi
