@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Disabling autostarts..."
+
+    mkdir -p ~/.config
+    cp -r autostart ~/.config/
+}
