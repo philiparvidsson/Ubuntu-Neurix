@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+. nxlib
+
+exec > /dev/null
+
+nxFunc=nxConfig
+nxExecDir nx
+
+nxFunc=nxInstall
+nxExecDir nx

@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+nxConfig() {
+    nxConfirm redshift "Install redshift?" yes
+}
+
+nxInstall() {
+    if ! $(nxConfirm redshift); then
+        return
+    fi
+
+    nxPrint "Installing redshift..."
+    sudo apt install redshift -y
+
+    mkdir -p ~/.config/autostart
+    cp redshift.desktop ~/.config/autostart/
+
+    echo | sudo tee --append /etc/geoclue/geoclue.conf
+    cat geoclue.conf | sudo tee --append /etc/geoclue/geoclue.conf
+}

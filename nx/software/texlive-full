@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+nxConfig() {
+    nxConfirm texlive-full "Install TeX Live (full)?" yes
+}
+
+nxInstall() {
+    if ! $(nxConfirm texlive-full); then
+        return
+    fi
+
+    nxPrint "Installing TeX Live..."
+    sudo apt install texlive-full -y
+}

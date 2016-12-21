@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Installing Python..."
+    sudo apt install python python-pip -y
+}

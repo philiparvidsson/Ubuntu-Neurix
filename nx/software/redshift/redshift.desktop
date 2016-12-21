@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=redshift -t 3400:2700
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=redshift
+Comment=Runs redshift for a more pleasant experience.

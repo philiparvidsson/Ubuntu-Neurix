@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+
+declare -A nxVars
+
+nxConfirm() {
+    [ $# = 1 ] && {
+        $(nxVar $1)
+        return
+    }
+
+    local a=""
+    local s="[y/n]"
+
+    [ $# = 3 ] && a="$3"
+
+    [ "$a" = "no" ] && s="[y/N]"
+    [ "$a" = "yes" ] && s="[Y/n]"
+
+    while [ 1 ]; do
+        read -r -p "$2 $s " r
+        case $r in
+            [yY])
+                nxVar $1 true
+                echo true
+                return 0
+                ;;
+            [nN])
+                nxVar $1 false
+                echo false
+                return 1
+                ;;
+            "")
+                [ "$a" = "yes" ] && { nxVar $1 true; echo true; return 0; }
+                [ "$a" = "no" ] && { nxVar $1 false; echo false; return 1; }
+                ;;
+        esac
+    done
+}
+
+nxExec() {
+    nxConfig() {
+        :
+    }
+
+    nxInstall() {
+        :
+    }
+
+    local dir=$(realpath $(dirname $0))
+
+    nxThis=$(basename $1)
+
+    cd $(dirname $1)
+    . ./$nxThis
+
+    : && $nxFunc ${@:2}
+
+    cd $dir
+}
+
+nxExecDir() {
+    for s in $1/*; do
+        if [[ -d $s ]]; then
+            nxExecDir $s ${@:2}
+        elif [[ -x $s  ]]; then
+            nxExec $s ${@:2}
+        fi
+    done
+}
+
+nxPrint() {
+    printf "\033[1;36m$@\033[0m\n" > /dev/tty
+}
+
+nxVar() {
+    if [ $# = 1 ]; then
+        echo ${nxVars[$nxThis.$1]}
+    else
+        nxVars[$nxThis.$1]="${@:2}"
+    fi
+}

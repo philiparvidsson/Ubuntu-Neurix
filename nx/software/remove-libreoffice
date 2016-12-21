@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+nxConfig() {
+    nxConfirm remove-libreoffice "Remove LibreOffice?"
+}
+
+nxInstall() {
+    if ! $(nxConfirm remove-libreoffice); then
+        return
+    fi
+
+    nxPrint "Removing LibreOffice..."
+    sudo apt purge libreoffice* -y
+}

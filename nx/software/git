@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Installing git..."
+    sudo apt install git -y
+}

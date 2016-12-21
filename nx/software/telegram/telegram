@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+nxConfig() {
+    nxConfirm telegram "Install Telegram?" yes
+}
+
+nxInstall() {
+    if ! $(nxConfirm telegram); then
+        return
+    fi
+
+    nxPrint "Installing Telegram..."
+
+    wget -q --trust-server-names https://telegram.org/dl/desktop/linux
+    tar -xf tsetup.*.tar.xz
+    rm tsetup.*.tar.xz
+    sudo mv Telegram /opt/
+
+    mkdir -p ~/.local/share/applications
+    cp telegramdesktop.desktop ~/.local/share/applications/
+}

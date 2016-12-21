@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+nxConfig() {
+    nxConfirm remove-firefox "Remove Firefox?" yes
+}
+
+nxInstall() {
+    if ! $(nxConfirm remove-firefox); then
+        return
+    fi
+
+    nxPrint "Removing Firefox..."
+    sudo apt purge firefox -y
+}

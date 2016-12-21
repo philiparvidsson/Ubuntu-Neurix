@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+nxConfig() {
+    nxConfirm emacs "Install Emacs?" yes
+
+    $(nxConfirm emacs) &&
+        nxConfirm emacs-config "Install Philip's Emacs config?" yes
+}
+
+nxInstall() {
+    if ! $(nxConfirm emacs); then
+        return
+    fi
+
+    nxPrint "Installing Emacs..."
+    sudo apt install emacs -y
+
+    if $(nxConfirm emacs-config); then
+        nxPrint "Installing Philip's Emacs config..."
+        git clone https://github.com/philiparvidsson/.emacs.d.git ~/.emacs.d
+    fi
+}

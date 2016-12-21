@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+nxConfig() {
+    nxConfirm slack "Install Slack?" yes
+}
+
+nxInstall() {
+    if ! $(nxConfirm slack); then
+        return
+    fi
+
+    nxPrint "Installing Slack..."
+
+    local url="https://slack.com/downloads/instructions/linux"
+    local regex="slack-desktop-[0-9\.]+-amd64\.deb"
+    local deb=$(wget -O- -q $url | egrep -o $regex | sort -V  | tail -1)
+
+    wget -O $deb -q https://downloads.slack-edge.com/linux_releases/$deb
+    sudo apt install ./$deb -y
+    rm $deb
+}
