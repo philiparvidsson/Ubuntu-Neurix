@@ -1,0 +1,15 @@
+{
+    "compact-view": false,
+    "incomplete-dir-enabled": true,
+    "show-filterbar": false,
+    "show-statusbar": false,
+    "show-toolbar": false,
+    "start-added-torrents": true,
+    "torrent-added-notification-enabled": true,
+    "torrent-complete-notification-enabled": true,
+    "torrent-complete-sound-enabled": false,
+    "user-has-given-informed-consent": true,
+    "utp-enabled": true,
+    "watch-dir": "~/Downloads",
+    "watch-dir-enabled": true
+}
