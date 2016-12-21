@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 nxConfig() {
-    nxConfirm remove-libreoffice "Remove LibreOffice?"
+    nxConfirm remove-libreoffice "Remove LibreOffice?" yes
 }
 
 nxInstall() {
