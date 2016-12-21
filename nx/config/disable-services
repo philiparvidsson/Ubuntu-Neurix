@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    sudo systemctl -q disable avahi-daemon cups spice-vdagent
+}

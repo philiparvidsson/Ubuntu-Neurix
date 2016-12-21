@@ -10,7 +10,7 @@ nxInstall() {
 
     gnome-shell-extension-tool -e hidetopbar@mathieu.bidon.ca
 
-    local ext="/org/gnome/shell/extensions/ext/"
+    local ext="/org/gnome/shell/extensions/hidetopbar/"
 
     dconf write "${ext}enable-intellihide" false
     dconf write "${ext}mouse-sensitive" true

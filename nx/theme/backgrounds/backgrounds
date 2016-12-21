@@ -4,7 +4,7 @@ nxInstall() {
     nxPrint "Installing backgrounds..."
 
     mkdir -p ~/Pictures
-    cp -rf Backgrounds ~/Pictures/
+    cp -r Backgrounds ~/Pictures/
 
     local s=$(ls ~/Pictures/Backgrounds | head -1)
     local bg="file:///home/$USER/Pictures/Backgrounds/$s"

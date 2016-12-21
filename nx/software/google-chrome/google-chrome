@@ -25,14 +25,14 @@ nxInstall() {
     mkdir -p ~/.config/google-chrome
     touch ~/.config/google-chrome/First\ Run
 
-    mkdir -p .config/google-chrome/Default
+    mkdir -p ~/.config/google-chrome/Default
     local user=$(tr '[:lower:]' '[:upper:]' <<< ${USER:0:1})${USER:1}
-    cat Preferences.json | sed "s/%Username%/${user}/g" > .config/google-chrome/Default/Preferences
+    cat Preferences.json | sed "s/%Username%/${user}/g" > ~/.config/google-chrome/Default/Preferences
 
     if $(nxConfirm google-chrome-extensions); then
         nxPrint "Installing Google Chrome extensions..."
 
         sudo mkdir -p /opt/google/chrome
-        sudo cp -rf extensions /opt/google/chrome/
+        sudo cp -r extensions /opt/google/chrome/
     fi
 }
