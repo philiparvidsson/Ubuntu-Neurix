@@ -3,10 +3,10 @@
 nxInstall() {
     nxPrint "Installing Adapta GTK theme..."
 
-    sudo add-apt-repository ppa:tista/adapta -y
+    sudo add-apt-repository -y ppa:tista/adapta
     sudo apt update
 
-    sudo apt-get install adapta-gtk-theme fonts-noto fonts-roboto -y
+    sudo apt-get install -qqy adapta-gtk-theme fonts-noto fonts-roboto
 
     fc-cache -fv
 

@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Configuring GNOME Terminal..."
+
+    gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
+
+    local profile_id=$(gsettings get org.gnome.Terminal.ProfilesList default)
+    local default_profile="org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile_id:1:-1}/"
+
+    gsettings set ${default_profile} allow-bold false
+    gsettings set ${default_profile} background-color 'rgb(0,0,0)'
+    gsettings set ${default_profile} background-transparency-percent 20
+    gsettings set ${default_profile} cursor-blink-mode off
+    gsettings set ${default_profile} default-size-columns 72
+    gsettings set ${default_profile} foreground-color 'rgb(255,255,255)'
+
+    gsettings set ${default_profile} palette "['rgb(0  ,   0,   0)', \
+                                               'rgb(205,   0,   0)', \
+                                               'rgb(0  , 205,   0)', \
+                                               'rgb(205, 205,   0)', \
+                                               'rgb(0  ,   0, 238)', \
+                                               'rgb(205,   0, 205)', \
+                                               'rgb(0  , 205, 205)', \
+                                               'rgb(229, 229, 229)', \
+                                               'rgb(127, 127, 127)', \
+                                               'rgb(255,   0,   0)', \
+                                               'rgb(0  , 255,   0)', \
+                                               'rgb(255, 255,   0)', \
+                                               'rgb(92 , 92 , 255)', \
+                                               'rgb(255,   0, 255)', \
+                                               'rgb(0  , 255, 255)', \
+                                               'rgb(255, 255, 255)']"
+
+    gsettings set ${default_profile} scrollbar-policy never
+    gsettings set ${default_profile} use-theme-colors false
+    gsettings set ${default_profile} use-transparent-background true
+
+    echo >> ~/.bashrc
+    cat bashrc >> ~/.bashrc
+}

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Installing show-term script..."
+
+    sudo apt install -qqy wmctrl
+    mkdir -p ~/bin
+    cp show-term ~/bin/
+    chmod +x ~/bin/show-term
+}

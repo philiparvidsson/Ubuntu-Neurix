@@ -17,6 +17,6 @@ nxInstall() {
 
     if $(nxConfirm emacs-config); then
         nxPrint "Installing Philip's Emacs config..."
-        git clone https://github.com/philiparvidsson/.emacs.d.git ~/.emacs.d
+        git clone -q https://github.com/philiparvidsson/.emacs.d.git ~/.emacs.d
     fi
 }

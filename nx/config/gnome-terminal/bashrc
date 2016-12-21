@@ -1,0 +1,6 @@
+# Make sure the git status in the terminal prompt shows repository status.
+export GIT_PS1_SHOWCOLORHINTS=1
+export GIT_PS1_SHOWDIRTYSTATE=1
+
+# Set terminal prompt (with git status).
+export PS1='\n\[\033[0;36m\]$(pwd)\[\033[0m\]$(__git_ps1)\n\[\033[0;31m\]# \[\033[0m\]'

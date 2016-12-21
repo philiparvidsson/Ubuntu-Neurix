@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Configuring keyboard..."
+    gsettings set org.gnome.desktop.input-sources xkb-options "['compose:caps']"
+}

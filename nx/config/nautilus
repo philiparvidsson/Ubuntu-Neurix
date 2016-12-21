@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Configuring Natuilus..."
+
+    local nautilus="org.gnome.nautilus"
+
+    gsettings set $nautilus.icon-view default-zoom-level small
+    gsettings set $nautilus.preferences sort-directories-first true
+}

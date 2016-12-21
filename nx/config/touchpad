@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Configuring touchpad..."
+
+    local touchpad="org.gnome.desktop.peripherals.touchpad"
+
+    gsettings set $touchpad click-method fingers
+    gsettings set $touchpad natural-scroll true
+    gsettings set $touchpad speed -0.72
+}
