@@ -3,14 +3,11 @@
 nxInstall() {
     nxPrint "Installing dash-to-dock extension..."
 
-    git clone -q https://github.com/micheleg/dash-to-dock.git
+    git clone -q https://github.com/micheleg/dash-to-dock.git /tmp/dash-to-dock
 
-    cd dash-to-dock
+    cd /tmp/dash-to-dock
 
     make && make install
-
-    cd ..
-    rm -rf dash-to-dock
 
     gnome-shell-extension-tool -e dash-to-dock@micxgx.gmail.com
 
