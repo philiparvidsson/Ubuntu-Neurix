@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Configuring power/sleep settings..."
+
+    gsettings set org.gnome.desktop.screensaver lock-delay 120
+    gsettings set org.gnome.desktop.session idle-delay 180
+    gsettings set org.gnome.settings-daemon.plugins.power idle-brightness 10
+    gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 300
+    gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type suspend
+}
