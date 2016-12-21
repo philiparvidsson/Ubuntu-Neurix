@@ -3,6 +3,10 @@
 nxInstall() {
     nxPrint "Configuring power/sleep settings..."
 
+    echo | sudo tee --append /etc/sysctl.conf
+    echo kernel.nmi_watchdog=0 | sudo tee --append /etc/sysctl.conf
+    echo vm.dirty_writeback_centisecs=1500 | sudo tee --append /etc/sysctl.conf
+
     gsettings set org.gnome.desktop.screensaver lock-delay 120
     gsettings set org.gnome.desktop.session idle-delay 180
     gsettings set org.gnome.settings-daemon.plugins.power idle-brightness 10

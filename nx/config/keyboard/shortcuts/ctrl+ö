@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Installing ctrl+ö keyboard shortcut..."
+
+    . ./nxkbdutil
+    nxCreateKeyboardShortcut "Terminal" "<Primary>odiaeresis" "show-term"
+}

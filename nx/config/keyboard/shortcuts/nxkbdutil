@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+nxCreateKeyboardShortcut() {
+    if [ "${#nxKbdCmds[@]}" = 0 ]; then
+        nxKbdCmds=()
+        nxKbdKeys=()
+        nxKbdNames=()
+    fi
+
+    nxKbdNames+=($1)
+    nxKbdKeys+=($2)
+    nxKbdCmds+=($3)
+
+    local a="org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:"
+    local b="["
+
+    for i in ${!nxKbdKeys[@]}; do
+        local c="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom$i/"
+
+        if (( i > 0)); then
+            b="$b, "
+        fi
+
+        b="$b'$c'"
+        c="$a$c"
+
+        gsettings set ${c} binding ${nxKbdKeys[$i]}
+        gsettings set ${c} command ${nxKbdCmds[$i]}
+        gsettings set ${c} name ${nxKbdNames[$i]}
+    done
+
+    b="$b]"
+
+    gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "$b"
+}

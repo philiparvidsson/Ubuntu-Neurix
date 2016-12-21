@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Installing win+e keyboard shortcut..."
+
+    . ./nxkbdutil
+    nxCreateKeyboardShortcut "Nautilus" "<Super>e" "nautilus"
+}
