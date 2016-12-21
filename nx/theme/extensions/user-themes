@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 nxInstall() {
-    nxPrint "Installing User themes extension..."
+    nxPrint "Enabling User themes extension..."
 
     gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com
 
