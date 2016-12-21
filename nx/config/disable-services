@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
 nxInstall() {
+    nxPrint "Disabling services..."
     sudo systemctl -q disable avahi-daemon cups spice-vdagent
 }

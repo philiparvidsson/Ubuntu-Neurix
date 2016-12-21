@@ -1,0 +1,2 @@
+# Quick alias for opening folders from terminal.
+alias e.='(nohup nautilus . </dev/null >/dev/null 2>&1 &)'

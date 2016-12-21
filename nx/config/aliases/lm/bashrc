@@ -1,0 +1,3 @@
+# Light manager (See https://github.com/philiparvidsson/phil-phone-home for more
+# information.  I use this to control lights around my home.).
+function lm { python ~/bin/light-mgr.py $@; }
