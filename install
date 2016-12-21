@@ -30,3 +30,7 @@ sleep 5
 
 nxFunc=nxInstall
 nxExecDir nx
+
+nxPrint "NX Linux was installed."
+nxPrint "Please reboot your system now!"
+nxPrint ""

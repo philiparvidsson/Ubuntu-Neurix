@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    rm -rf ~/Documents
+    rm -rf ~/Music
+    rm -rf ~/Public
+    rm -rf ~/Templates
+    rm -rf ~/Videos
+}
