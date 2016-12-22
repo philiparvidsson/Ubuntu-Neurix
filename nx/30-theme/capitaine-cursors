@@ -9,5 +9,5 @@ nxInstall() {
     git clone -q $repo $path
     sudo cp -pr $path/bin/xcursor /usr/share/icons/capitaine-cursors
 
-    gsettings set org.gnome.desktop.interface cursor-theme "Capitaine-cursors"
+    gsettings set org.gnome.desktop.interface cursor-theme capitaine-cursors
 }
