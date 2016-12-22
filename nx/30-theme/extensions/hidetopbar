@@ -3,8 +3,10 @@
 nxInstall() {
     nxPrint "Installing Hide top bar extension..."
 
+    local repo="https://github.com/mlutfy/hidetopbar.git"
+
     cd ~/.local/share/gnome-shell/extensions/
-    git clone https://github.com/mlutfy/hidetopbar.git hidetopbar@mathieu.bidon.ca
+    git clone -q $repo hidetopbar@mathieu.bidon.ca
     cd hidetopbar@mathieu.bidon.ca
     make schemas
 

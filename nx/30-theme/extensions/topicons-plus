@@ -3,8 +3,10 @@
 nxInstall() {
     nxPrint "Installing Topicons plus extension..."
 
+    local repo="https://github.com/phocean/TopIcons.git"
+
     cd /tmp
-    git clone https://github.com/phocean/TopIcons.git
+    git clone -q $repo
     cd TopIcons
     make
 
