@@ -2,6 +2,7 @@
 
 nxConfig() {
     nxConfirm plex-media-server "Install Plex Media Server?" yes
+    nxConfirm plex-media-server-config "Configura Plex Media Server?" yes
 }
 
 nxInstall() {
@@ -19,4 +20,11 @@ nxInstall() {
     wget -P /tmp -q $deb
     sudo apt-get -qqy install /tmp/plexmediaserver_*_amd64.deb
     sudo systemctl -q disable plexmediaserver
+
+    if $(nxConfirm plex-media-server-config); then
+        sudo mkdir -p /var/lib/plexmediaserver/Library/Movies
+        sudo mkdir -p /var/lib/plexmediaserver/Library/TV\ Shows/
+        sudo chown -R $USER:$USER /var/lib/plexmediaserver/Library/Movies
+        sudo chown -R $USER:$USER /var/lib/plexmediaserver/Library/TV\ Shows/
+    fi
 }

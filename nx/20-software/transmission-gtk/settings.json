@@ -4,6 +4,8 @@
     "show-statusbar": false,
     "show-toolbar": false,
     "torrent-complete-sound-enabled": false,
+    "trash-can-enabled": true,
+    "trash-original-torrent-files": true,
     "user-has-given-informed-consent": true,
-    "watch-dir-enabled": true
+    "watch-dir-enabled": true,
 }
