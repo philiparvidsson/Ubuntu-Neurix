@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Installing Capitaine cursors..."
+
+    git clone https://github.com/keeferrourke/capitaine-cursors.git
+    cd capitaine-cursors
+    sudo cp -pr bin/xcursor /usr/share/icons/capitaine-cursors
+}
