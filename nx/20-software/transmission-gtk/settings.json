@@ -1,6 +1,7 @@
 {
     "incomplete-dir-enabled": true,
     "show-filterbar": false,
+    "show-options-window": false,
     "show-statusbar": false,
     "show-toolbar": false,
     "torrent-complete-sound-enabled": false,
