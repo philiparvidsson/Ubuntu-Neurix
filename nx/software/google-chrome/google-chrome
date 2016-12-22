@@ -19,7 +19,7 @@ nxInstall() {
     wget -O - -q $key | sudo apt-key add -
 
     local deb='google-chrome-stable_current_amd64.deb'
-    wget -O /tmp/$deb -q https://dl.google.com/linux/direct/$deb
+    wget -P /tmp -q https://dl.google.com/linux/direct/$deb
     sudo apt-get -qqy install /tmp/$deb
 
     mkdir -p ~/.config/google-chrome

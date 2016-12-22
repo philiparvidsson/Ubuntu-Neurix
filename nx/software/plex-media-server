@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+nxConfig() {
+    nxConfirm plex-media-server "Install Plex Media Server?" yes
+}
+
+nxInstall() {
+    if ! $(nxConfirm plex-media-server); then
+        return
+    fi
+
+    nxPrint "Installing Plex Media Server..."
+    nxPrint "  NOTE: Service disabled by default."
+
+    local deb=$(wget -qO - https://plex.tv/api/downloads/1.json | jq -r '.computer.Linux.releases[] | select( .build == "linux-ubuntu-x86_64") | .url' | head -1)
+
+    wget -P /tmp -q $deb
+    sudo apt-get -qqy install /tmp/plexmediaserver_*_amd64.deb
+    sudo systemctl -q disable plexmediaserver
+}
