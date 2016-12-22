@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Installing Transmission..."
+    sudo apt-get -qqy install transmission-gtk
+
+    mkdir -p ~/.config/transmission
+    cp settings.json ~/.config/transmission/
+}
