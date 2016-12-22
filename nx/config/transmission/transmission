@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-nxInstall() {
-    nxPrint "Configuring Transmission..."
-
-    mkdir -p ~/.config/transmission
-    cp settings.json ~/.config/transmission/
-}
