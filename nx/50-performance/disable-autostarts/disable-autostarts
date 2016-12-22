@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Disabling autostarts..."
+
+    mkdir -p ~/.config
+    cp -r autostart ~/.config/
+
+    tracker daemon -t
+    rm -rf ~/.cache/tracker ~/.local/share/tracker
+}

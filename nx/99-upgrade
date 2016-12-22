@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Updating installed software..."
+
+    sudo apt-get -qqy update
+    sudo apt-get -qqy autoclean
+    sudo apt-get -qqy autoremove
+    sudo apt-get -qqy upgrade
+}

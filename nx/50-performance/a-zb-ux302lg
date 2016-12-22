@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+nxConfig() {
+    nxConfirm a-zb-ux302lg "Are you using an Asus ZenBook UX302LG?"
+}
+
+nxInstall() {
+    if ! $(nxConfirm a-zb-ux302lg); then
+        return
+    fi
+
+    nxPrint "Optimizing for Asus ZenBook UX302LG..."
+
+    local grub="/etc/default/grub"
+
+    sudo sed --in-place 's/\#GRUB_CMDLINE_LINUX=\"\"/GRUB_CMDLINE_LINUX=\"text\"' $grub
+    sudo sed --in-place 's/\#GRUB_CMDLINE_LINUX_DEFAULT=\".*\"/GRUB_CMDLINE_LINUX=\"acpi=force acpi_enforce_resources=lax acpi_osi=Linux drm.vblankoffdelay=1 i915.i915_enable_fbc=1 i915.i915_enable_rc6=1 i915.lvds_downclock=1 i915.semaphores=1 pcie_aspm=force\"' $grub
+    sudo sed --in-place 's/\#GRUB_TERMINAL=console/GRUB_TERMINAL=console' $grub
+}
