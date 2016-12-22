@@ -12,6 +12,8 @@ nxInstall() {
     nxPrint "Installing Plex Media Server..."
     nxPrint "  NOTE: Service disabled by default."
 
+    sudo apt-get -qqy install jq
+
     local deb=$(wget -qO - https://plex.tv/api/downloads/1.json | jq -r '.computer.Linux.releases[] | select( .build == "linux-ubuntu-x86_64") | .url' | head -1)
 
     wget -P /tmp -q $deb
