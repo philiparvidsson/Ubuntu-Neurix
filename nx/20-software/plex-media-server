@@ -2,7 +2,7 @@
 
 nxConfig() {
     nxConfirm plex-media-server "Install Plex Media Server?" yes
-    nxConfirm plex-media-server-config "Configura Plex Media Server?" yes
+    nxConfirm plex-media-server-config "Configure Plex Media Server?" yes
 }
 
 nxInstall() {
