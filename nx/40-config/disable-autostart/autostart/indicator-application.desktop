@@ -6,4 +6,5 @@ StartupNotify=false
 Terminal=false
 OnlyShowIn=Unity;GNOME;
 AutostartCondition=GNOME3 unless-session gnome
-Hidden=true
+X-GNOME-Autostart-enabled=false
+Hidden=True

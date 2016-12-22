@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=GNOME Initial Setup Copy Worker
+Type=Application
+Exec=/usr/lib/x86_64-linux-gnu/gnome-initial-setup/gnome-initial-setup-copy-worker
+OnlyShowIn=GNOME;
+NoDisplay=true
+X-GNOME-AutoRestart=false
+X-GNOME-Autostart-Phase=EarlyInitialization
+X-Ubuntu-Gettext-Domain=gnome-initial-setup
+X-GNOME-Autostart-enabled=false
+Hidden=True
