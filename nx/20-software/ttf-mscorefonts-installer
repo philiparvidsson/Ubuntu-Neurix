@@ -3,10 +3,10 @@
 nxInstall() {
     nxPrint "Installing ttf-mscorefonts-installer..."
 
+    local url="http://ftp.de.debian.org/debian/pool/contrib/m/msttcorefonts/"
     local deb="ttf-mscorefonts-installer_3.6_all.deb"
-    wget -q http://ftp.de.debian.org/debian/pool/contrib/m/msttcorefonts/$deb
-    sudo apt-get -qqy install ./$deb
-    rm $deb
+    wget -P /tmp -q $url$deb
+    sudo apt-get -qqy install /tmp/$deb
 
     #fc-cache -fv
 }

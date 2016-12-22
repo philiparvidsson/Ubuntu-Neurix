@@ -3,9 +3,11 @@
 nxInstall() {
     nxPrint "Installing Capitaine cursors..."
 
-    git clone https://github.com/keeferrourke/capitaine-cursors.git
-    sudo cp -pr capitaine-cursors/bin/xcursor /usr/share/icons/capitaine-cursors
-    rm -rf capitaine-cursors
+    local repo="https://github.com/keeferrourke/capitaine-cursors.git"
+    local path="/tmp/capitaine-cursors"
+
+    git clone $repo $path
+    sudo cp -pr $path/bin/xcursor /usr/share/icons/capitaine-cursors
 
     gsettings set org.gnome.desktop.interface cursor-theme "Capitaine"
 }

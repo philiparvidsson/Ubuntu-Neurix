@@ -11,6 +11,8 @@ NX Linux by Philip Arvidsson <philip@philiparvidsson.com>
 
 We will begin by asking you a few questions to configure your installation.
   If you want to use default settings, just keep pressing enter.
+
+Please wait...
 "
 
 sudo apt-get update -qqy
