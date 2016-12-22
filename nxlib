@@ -48,10 +48,8 @@ nxExec() {
 
     local dir=$(realpath $(dirname $0))
 
-    nxThis=$(basename $1)
-
     cd $(dirname $1)
-    . ./$nxThis
+    . ./$(basename $1)
 
     : && $nxFunc ${@:2}
 
@@ -74,8 +72,8 @@ nxPrint() {
 
 nxVar() {
     if [ $# = 1 ]; then
-        echo ${nxVars[$nxThis.$1]}
+        echo ${nxVars[$1]}
     else
-        nxVars[$nxThis.$1]="${@:2}"
+        nxVars[$1]="${@:2}"
     fi
 }
