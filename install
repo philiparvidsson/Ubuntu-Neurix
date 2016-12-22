@@ -34,5 +34,7 @@ nxFunc=nxInstall
 nxExecDir nx
 
 nxPrint "NX Linux was installed."
-nxPrint "Please reboot your system now!"
+nxPrint "Please reboot your system!"
 nxPrint ""
+
+$(nxConfirm reboot "Reboot now?" yes) && reboot

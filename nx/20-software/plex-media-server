@@ -22,6 +22,8 @@ nxInstall() {
     sudo systemctl -q disable plexmediaserver
 
     if $(nxConfirm plex-media-server-config); then
+        nxPrint "Installing Plex Media Server config..."
+
         sudo mkdir -p /var/lib/plexmediaserver/Library/Movies
         sudo mkdir -p /var/lib/plexmediaserver/Library/TV\ Shows/
         sudo chown -R $USER:$USER /var/lib/plexmediaserver/Library/Movies
