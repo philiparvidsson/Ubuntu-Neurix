@@ -2,9 +2,40 @@
 
 nxInstall() {
     nxPrint "Configuring favorite apps..."
-    dconf write /org/gnome/shell/favorite-apps "['google-chrome.desktop',      \
-                                                 'telegramdesktop.desktop',    \
-                                                 'slack.desktop',              \
-                                                 'org.gnome.Terminal.desktop', \
-                                                 'emacs24.desktop']"
+
+    local apps=()
+
+    if $(nxConfirm google-chrome); then
+        apps+=("'google-chrome.desktop")
+    else
+        apps+=("'firefox.desktop'")
+    fi
+
+    if $(nxConfirm telegram); then
+        apps+=("'telegramdesktop.desktop'")
+    fi
+
+    if $(nxConfirm slack); then
+        apps+=("'slack.desktop")
+    fi
+
+    apps+=("'org.gnome.Terminal.desktop'")
+
+    if $(nxConfirm emacs); then
+        apps+=("'emacs24.desktop")
+    fi
+
+    local s="["
+
+    for i in ${!apps[@]}; do
+        if (( i > 0)); then
+            s="$s, "
+        fi
+
+        s="$s${apps[$i]}"
+    done
+
+    s="$s]"
+
+    dconf write /org/gnome/shell/favorite-apps "$s"
 }

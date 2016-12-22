@@ -13,7 +13,7 @@ We will begin by asking you a few questions to configure your installation.
   If you want to use default settings, just keep pressing enter.
 "
 
-sleep 1
+sudo apt-get update -qqy
 
 nxFunc=nxConfig
 nxExecDir nx
