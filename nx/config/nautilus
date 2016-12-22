@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 nxInstall() {
-    nxPrint "Configuring Natuilus..."
+    nxPrint "Configuring Nautilus..."
 
     local nautilus="org.gnome.nautilus"
 
