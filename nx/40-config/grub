@@ -3,6 +3,8 @@
 nxInstall() {
     nxPrint "Configuring grub..."
 
+    local grub="/etc/default/grub"
+
     sudo sed --in-place 's/GRUB_CMDLINE_LINUX=\"\"/GRUB_CMDLINE_LINUX=\"text\"/' $grub
     sudo sed --in-place 's/GRUB_CMDLINE_LINUX_DEFAULT=\"quiet splash\"/GRUB_CMDLINE_LINUX_DEFAULT=\"\"/' $grub
     sudo sed --in-place 's/\#GRUB_TERMINAL=console/GRUB_TERMINAL=console/' $grub
