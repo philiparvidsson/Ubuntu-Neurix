@@ -6,7 +6,7 @@ nxInstall() {
     mkdir -p ~/Pictures
     cp -r Backgrounds ~/Pictures/
 
-    local s=$(ls ~/Pictures/Backgrounds | head -1)
+    local s=$(ls ~/Pictures/Backgrounds | tail -1)
     local bg="file:///home/$USER/Pictures/Backgrounds/$s"
 
     gsettings set org.gnome.desktop.background picture-uri $bg

@@ -3,4 +3,5 @@
 nxInstall() {
     nxPrint "Installing Python..."
     sudo apt-get -qqy install python python-pip
+    sudo pip install --upgrade pip
 }

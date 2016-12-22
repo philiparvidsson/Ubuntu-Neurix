@@ -2,5 +2,5 @@
 
 nxInstall() {
     nxPrint "Disabling services..."
-    sudo systemctl -q disable avahi-daemon cups spice-vdagent
+    sudo systemctl -q disable avahi-daemon cups ModemManager spice-vdagent
 }

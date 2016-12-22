@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
 
 nxInstall() {
-    nxPrint "Optimizing performance..."
-
-    echo | sudo tee --append /etc/sysctl.conf
-    echo kernel.nmi_watchdog=0 | sudo tee --append /etc/sysctl.conf
-    echo vm.swappiness=10 | sudo tee --append /etc/sysctl.conf
-    echo vm.vfs_cache_pressure=50 | sudo tee --append /etc/sysctl.conf
+    nxPrint "Optimizing power/sleep settings..."
 
     gsettings set org.gnome.desktop.screensaver lock-delay 120
     gsettings set org.gnome.desktop.session idle-delay 180
