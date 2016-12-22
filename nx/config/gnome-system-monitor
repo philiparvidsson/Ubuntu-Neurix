@@ -7,6 +7,6 @@ nxInstall() {
 
     gsettings set $s cpu-stacked-area-chart true
     gsettings set $s current-tab resources
-    gsettings set $s graph-update-internval 1000
-    gsettings set $s update-internval 1000
+    gsettings set $s graph-update-interval 1000
+    gsettings set $s update-interval 1000
 }
