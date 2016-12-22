@@ -5,10 +5,12 @@ nxInstall() {
 
     local apps=()
 
-    if $(nxConfirm google-chrome); then
-        apps+=("'google-chrome.desktop")
-    else
+    if ! $(nxConfirm remove-firefox); then
         apps+=("'firefox.desktop'")
+    fi
+
+    if $(nxConfirm google-chrome); then
+        apps+=("'google-chrome.desktop'")
     fi
 
     if $(nxConfirm telegram); then
@@ -16,13 +18,13 @@ nxInstall() {
     fi
 
     if $(nxConfirm slack); then
-        apps+=("'slack.desktop")
+        apps+=("'slack.desktop'")
     fi
 
     apps+=("'org.gnome.Terminal.desktop'")
 
     if $(nxConfirm emacs); then
-        apps+=("'emacs24.desktop")
+        apps+=("'emacs24.desktop'")
     fi
 
     local s="["
