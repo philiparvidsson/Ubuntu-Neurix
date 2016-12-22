@@ -3,7 +3,6 @@
 nxInstall() {
     nxPrint "Installing light-mgr script..."
 
-    sudo apt-get -qqy install python
     mkdir -p ~/bin
     cp light-mgr.py ~/bin/
     chmod +x ~/bin/light-mgr.py
