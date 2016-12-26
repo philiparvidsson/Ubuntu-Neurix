@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Installing plex scripts..."
+
+    mkdir -p ~/bin
+
+    cp plex-add-media ~/bin/
+    cp plex-start ~/bin/
+    cp plex-stop ~/bin/
+
+    chmod +x ~/bin/plex-add-media
+    chmod +x ~/bin/plex-start
+    chmod +x ~/bin/plex-stop
+}

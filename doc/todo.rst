@@ -1,0 +1,1 @@
+- Don't start redshift until we can get a location

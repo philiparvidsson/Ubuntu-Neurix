@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Configuring screensaver..."
+
+    gsettings set org.gnome.desktop.screensaver lock-enabled false
+}

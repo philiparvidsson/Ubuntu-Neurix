@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+srcdir="$TR_TORRENT_DIR/$TR_TORRENT_NAME"
+name=$(basename $srcdir)
+destdir="/var/lib/plexmediaserver/Library"
+size=$(du -sm $srcdir | awk '{print $1;}')
+
+is_movie="false"
+is_tvshow="false"
+
+printf "adding $name to Plex...\n"
+
+movie=1
+tvshow=0
+
+if [[ $rscdir == *"s"??"e"??* ]]; then
+    tvshow=$(($tvshow+10))
+fi
+
+if [[ $rscdir == *"s"??"e"??* ]]; then
+    tvshow=$(($tvshow+10))
+fi
+
+shopt -s nocasematch
+
+if [[ $name =~ s[0-9]e[0-9] ]]; then
+    tvshow=$((tvshow + 8))
+elif [[ $name =~ s[0-9][0-9]e[0-9][0-9] ]]; then
+    tvshow=$((tvshow + 10))
+elif [[ $name =~ s[0-9][0-9][0-9]e[0-9][0-9][0-9] ]]; then
+    tvshow=$((tvshow + 8))
+fi
+
+if [[ $name =~ hdtv ]]; then
+    tvshow=$((tvshow + 8))
+fi
+
+if (( size > 1000 )); then
+    movie=$((movie + 4))
+fi
+
+if (( movie > 0 && movie > tvshow )); then
+    is_movie="true"
+elif (( tvshow > 0 && tvshow > movie )); then
+    is_tvshow="true"
+fi
+
+if ! $is_movie && ! $is_tvshow; then
+    printf "path is neither a movie or a tv show; aborting."
+    exit
+fi
+
+if $is_movie; then
+    destdir="$destdir/Movies/$name"
+elif $is_tvshow; then
+    if [[ $name =~ .*s[0-9][0-9]? ]]; then
+        destdir="$destdir/TV Shows/${BASH_REMATCH[0]}"
+    else
+        destdir="$destdir/TV Shows/$name"
+    fi
+fi
+
+if $is_movie && [ -d "$destdir" ]; then
+    echo "media is already in library; aborting."
+    exit
+fi
+
+mkdir -p "$destdir"
+
+for fn in `find $srcdir -name "*.rar"`; do
+    unrar x "$fn" "$destdir" > /dev/null
+done
+
+for fn in `find $srcdir -name "*.mkv"`; do
+    mv "$fn" "$destdir"
+done
+
+for fn in `find "$destdir" -name "*.rar"`; do
+    unrar x "$fn" $destdir > /dev/null
+    rm $fn
+done
+
+rm -rf "$destdir/*SAMPLE*"
+rm -rf "$destdir/*Sample*"
+rm -rf "$destdir/*sample*"
