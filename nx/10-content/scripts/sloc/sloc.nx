@@ -4,6 +4,6 @@ nxInstall() {
     nxPrint "Installing sloc script..."
 
     mkdir -p ~/bin
-    cp sloc.py ~/bin/
+    cp sloc ~/bin/
     chmod +x ~/bin/sloc
 }
