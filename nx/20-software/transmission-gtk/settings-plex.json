@@ -1,6 +1,7 @@
 {
     "incomplete-dir-enabled"          : true,
     "script-torrent-done-enabled"     : true,
+    "script-torrent-done-filename"    : "/home/%Username%/bin/plex-add-media",
     "show-filterbar"                  : false,
     "show-options-window"             : false,
     "show-statusbar"                  : false,

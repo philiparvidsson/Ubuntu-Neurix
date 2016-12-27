@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 srcdir="$TR_TORRENT_DIR/$TR_TORRENT_NAME"
-name=$(basename $srcdir)
+
+if (( $# > 0 )); then
+   srcdir=$1
+fi
+
+name=$(basename "$srcdir")
 destdir="/var/lib/plexmediaserver/Library"
-size=$(du -sm $srcdir | awk '{print $1;}')
+size=$(du -sm "$srcdir" | awk '{print $1;}')
 
 is_movie="false"
 is_tvshow="false"
@@ -66,17 +71,20 @@ fi
 
 mkdir -p "$destdir"
 
-for fn in `find $srcdir -name "*.rar"`; do
+find "$srcdir" -type f -name "*.rar" -print0 | while IFS= read -r -d '' fn; do
     unrar x "$fn" "$destdir" > /dev/null
 done
 
-for fn in `find $srcdir -name "*.mkv"`; do
-    mv "$fn" "$destdir"
+find "$srcdir" -type f -name "*.mkv" -print0 | while IFS= read -r -d '' fn; do
+    cp "$fn" "$destdir"
 done
 
-for fn in `find "$destdir" -name "*.rar"`; do
-    unrar x "$fn" $destdir > /dev/null
-    rm $fn
+find "$srcdir" -type f -name "*.mp4" -print0 | while IFS= read -r -d '' fn; do
+    cp "$fn" "$destdir"
+done
+
+find "$destdir" -type f -name "*.mkv" -print0 | while IFS= read -r -d '' fn; do
+    unrar x "$fn" "$destdir" > /dev/null
 done
 
 rm -rf "$destdir/*SAMPLE*"
