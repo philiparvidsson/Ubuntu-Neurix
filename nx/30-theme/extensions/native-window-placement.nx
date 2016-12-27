@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-nxInstall() {
-    nxPrint "Enabling Native window placement extension..."
-
-    gnome-shell-extension-tool -e native-window-placement@gnome-shell-extensions.gcampax.github.com
-
-    (nohup gnome-shell --replace < /dev/null > /dev/null 2>&1 &)
-}
