@@ -7,7 +7,7 @@ exec > /dev/null
 . nxlib
 
 nxPrint "\
-NX Linux by Philip Arvidsson <philip@philiparvidsson.com>
+Neurix Linux by Philip Arvidsson <philip@philiparvidsson.com>
 
 We will begin by asking you a few questions to configure your installation.
   If you want to use default settings, just keep pressing enter.
@@ -33,7 +33,7 @@ sleep 5
 nxFunc=nxInstall
 nxExecDir nx
 
-nxPrint "NX Linux was installed."
+nxPrint "Neurix was installed."
 nxPrint "Please reboot your system!"
 nxPrint ""
 
