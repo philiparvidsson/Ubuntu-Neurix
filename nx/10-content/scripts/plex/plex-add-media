@@ -83,10 +83,10 @@ find "$srcdir" -type f -name "*.mp4" -print0 | while IFS= read -r -d '' fn; do
     cp "$fn" "$destdir"
 done
 
-find "$destdir" -type f -name "*.mkv" -print0 | while IFS= read -r -d '' fn; do
+find "$destdir" -type f -name "*.rar" -print0 | while IFS= read -r -d '' fn; do
     unrar x "$fn" "$destdir" > /dev/null
 done
 
-rm -rf "$destdir/*SAMPLE*"
-rm -rf "$destdir/*Sample*"
-rm -rf "$destdir/*sample*"
+rm -rf "$destdir/"*SAMPLE*
+rm -rf "$destdir/"*Sample*
+rm -rf "$destdir/"*sample*
