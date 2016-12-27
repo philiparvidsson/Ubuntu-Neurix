@@ -1,0 +1,17 @@
+map Q goPrevious
+map E goNext
+
+unmap H
+unmap q
+map q goBack
+
+unmap L
+unmap e
+map e goForward
+
+unmap /
+unmap F
+map F enterFindMode
+
+map z previousTab
+map c nextTab
