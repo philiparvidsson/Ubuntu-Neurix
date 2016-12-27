@@ -13,7 +13,7 @@ nxInstall() {
 
     local grub="/etc/default/grub"
 
-    sudo sed --in-place 's/GRUB_CMDLINE_LINUX_DEFAULT=\"\(.*\)\"/GRUB_CMDLINE_LINUX_DEFAULT=\"\1 acpi=force acpi_backlight=vendor acpi_osi=Linux drm.vblankoffdelay=1 i915.i915_enable_fbc=1 i915.i915_enable_rc6=1 i915.lvds_downclock=1 i915.semaphores=1 pcie_aspm=force\"/' $grub
+    sudo sed --in-place 's/GRUB_CMDLINE_LINUX_DEFAULT=\"\(.*\)\"/GRUB_CMDLINE_LINUX_DEFAULT=\"\1 acpi=force drm.vblankoffdelay=1 i915.i915_enable_fbc=1 i915.i915_enable_rc6=1 i915.lvds_downclock=1 i915.semaphores=1 pcie_aspm=force acpi_osi=\"/' $grub
 
     sudo update-grub
 }
