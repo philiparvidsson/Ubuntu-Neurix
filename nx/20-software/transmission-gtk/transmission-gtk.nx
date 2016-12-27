@@ -4,12 +4,10 @@ nxInstall() {
     nxPrint "Installing Transmission..."
     sudo apt-get -qqy install transmission-gtk
 
-    local s="~/.config/transmission/settings.json"
-
     mkdir -p ~/.config/transmission
     if $(nxConfirm plex-media-server); then
-        cat settings-plex.json | sed "s/%Username%/$USER/g" > $s
+        cat settings-plex.json | sed "s/%Username%/$USER/g" > ~/.config/transmission/settings.json
     else
-        cat settings.json | sed "s/%Username%/$USER/g" > $s
+        cat settings.json | sed "s/%Username%/$USER/g" > ~/.config/transmission/settings.json
     fi
 }
