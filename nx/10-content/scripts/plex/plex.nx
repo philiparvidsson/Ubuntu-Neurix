@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
 nxInstall() {
+    if ! $(nxConfirm plex-media-server); then
+        return
+    fi
+
     nxPrint "Installing plex scripts..."
 
     mkdir -p ~/bin
