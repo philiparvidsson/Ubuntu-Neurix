@@ -10,4 +10,9 @@ nxInstall() {
     sudo cp -pr $path/bin/xcursor /usr/share/icons/capitaine-cursors
 
     gsettings set org.gnome.desktop.interface cursor-theme capitaine-cursors
+
+    mkdir -p ~/.icons/default
+
+    echo "[Icon Theme]" > ~/.icons/default/index.theme
+    echo "Inherits=Capitaine-cursors" >> ~/.icons/default/index.theme
 }
