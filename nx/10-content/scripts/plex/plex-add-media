@@ -85,6 +85,7 @@ done
 
 find "$destdir" -type f -name "*.rar" -print0 | while IFS= read -r -d '' fn; do
     unrar x "$fn" "$destdir" > /dev/null
+    rm -f $fn
 done
 
 rm -rf "$destdir/"*SAMPLE*
