@@ -2,5 +2,5 @@
 
 nxInstall() {
     nxPrint "Disabling services..."
-    sudo systemctl -q disable apport-forward.socket avahi-daemon bluetooth cups friendly-recovery ModemManager snapd snapd.boot-ok snapd.firstboot snapd.refresh.timer snapd.socket spice-vdagent whoopsie
+    sudo systemctl -q disable apport-forward.socket avahi-daemon bluetooth cups cups-browsed friendly-recovery ModemManager snapd snapd.boot-ok snapd.firstboot snapd.refresh.timer snapd.socket spice-vdagent whoopsie
 }
