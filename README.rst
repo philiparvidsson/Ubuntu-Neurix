@@ -18,4 +18,4 @@ Alternatively, you can copy and paste the following line of text into a terminal
 
 :code:`cd ~ && sudo apt install git -qqy && git clone https://github.com/philiparvidsson/neurix.git && cd neurix && ./install`
 
-*NOTE: You should not run the installation script with sudo—the script will automatically ask for sudo permissions and let you enter your password when requierd.*
+*NOTE: You should not run the installation script with sudo—the script will automatically ask for sudo permissions and let you enter your password when required.*
