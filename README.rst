@@ -112,6 +112,10 @@ Details
 
 Neurix is carefully configured to provide a pleasant and coherent experience. Below is information on certain intricacies of the configuration.
 
+**Google Chrome**
+
+Google Chrome automatically installs three extensions upon first start: `LastPass <https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd>`_, `uBlock Origin <https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm>`_ and `Vimium <https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb>`_.
+
 **redshift**
 
 If installed, redshift is set up to use geolocation to get your GPS coordinates for accurate tinting of the screen. It uses 3400K color temp. during day and 2700K during night.
