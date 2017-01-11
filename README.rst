@@ -18,8 +18,12 @@ Alternatively, you can copy and paste the following line of text into a terminal
 
 *NOTE: You should not run the installation script with sudo—the script will automatically ask for sudo permissions and let you enter your password when required.*
 
-Details
+Configuration
 =======
+
+Neurix is configurable to a great extent. Below are lists of software etc., configured by Neurix during installation.  You can, of course, easily change the installation by modifying the relevant nx-files.  If you want to remove a feature from the installation, simply delete the associated nx-files.
+
+Other than what is listed below, Neurix also installs and sets up a theme for you, providing a coherent and elegant look.  Also, certain services are disabled or reconfigured for a more optimized experience.
 
 Software
 --------
@@ -103,7 +107,7 @@ Neurix provides the following aliases/commands:
 | :code:`sysupd`          | Upgrade system                         |
 +-------------------------+----------------------------------------+
 
-Intricacies
+Details
 -----------
 
 Neurix is carefully configured to provide a pleasant and coherent experience. Below is information on certain intricacies of the configuration.
