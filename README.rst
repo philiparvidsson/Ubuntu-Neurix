@@ -20,6 +20,9 @@ Alternatively, you can copy and paste the following line of text into a terminal
 
 Details
 =======
+
+Software
+--------
 Neurix installs the following software:
 
 +---------------------------+----------+
@@ -68,6 +71,8 @@ Neurix *removes* the following software:
 | LibreOffice               | X        |
 +---------------------------+----------+
 
+Keyboard shortcuts
+------------------
 Neurix provides the following keyboard shortcuts:
 
 +------------------------------+---------------+
@@ -78,6 +83,8 @@ Neurix provides the following keyboard shortcuts:
 | <Super>e (win+e)             | Open Nautilus |
 +------------------------------+---------------+
 
+Aliases
+-------
 Neurix provides the following aliases/commands:
 
 +-------------------------+----------------------------------------+
