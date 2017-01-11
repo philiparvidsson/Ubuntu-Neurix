@@ -109,7 +109,9 @@ Intricacies
 Neurix is carefully configured to provide a pleasant and coherent experience. Below is information on certain intricacies of the configuration.
 
 **Transmission**
+
 If Transmission is installed, it is set up to automatically add and start torrents from the Downloads directory.  When a download is completed, and if Plex Media Server is installed, the torrent (movie or TV show) is automatically extracted and copied to the Plex Media Server library at :code:`/var/lib/plexmediaserver/Library`.
 
 **redshift**
+
 If installed, redshift is set up to use geolocation to get your GPS coordinates for accurate tinting of the screen. It uses 3400K color temp. during day and 2700K during night.
