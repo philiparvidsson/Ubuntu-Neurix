@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [ "$EUID" -eq 0 ]; then
+    echo "You should not execute this script with sudo!"
+    exit
+fi
+
 export DEBIANT_FRONTEND="noninteractive"
 
 exec > /dev/null
