@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Installing stt alias..."
+
+    echo >> ~/.bashrc
+    cat bashrc >> ~/.bashrc
+}

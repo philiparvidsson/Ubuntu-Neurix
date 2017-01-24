@@ -96,13 +96,15 @@ Neurix provides the following aliases/commands:
 +=========================+========================================+
 | :code:`e.`              | Open Nautilus in current directory     |
 +-------------------------+----------------------------------------+
+| :code:`plex-add-media`  | Add media to Plex Media Server library |
++-------------------------+----------------------------------------+
 | :code:`plex-start`      | Start Plex Media Server                |
 +-------------------------+----------------------------------------+
 | :code:`plex-stop`       | Stop Plex Media Server                 |
 +-------------------------+----------------------------------------+
-| :code:`plex-add-media`  | Add media to Plex Media Server library |
-+-------------------------+----------------------------------------+
 | :code:`sloc`            | Counts source lines of code            |
++-------------------------+----------------------------------------+
+| :code:`stt`             | Set terminal title                     |
 +-------------------------+----------------------------------------+
 | :code:`sysupd`          | Upgrade system                         |
 +-------------------------+----------------------------------------+

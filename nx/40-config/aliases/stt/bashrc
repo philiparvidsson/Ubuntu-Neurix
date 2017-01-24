@@ -1,0 +1,2 @@
+# Simple alias for setting the terminal title.
+function stt { PROMPT_COMMAND="echo -ne \"\033]0;$*\007\""; }
