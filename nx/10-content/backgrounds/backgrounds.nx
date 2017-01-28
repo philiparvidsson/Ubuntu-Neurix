@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+nxInstall() {
+    nxPrint "Installing backgrounds..."
+
+    mkdir -p ~/Pictures
+    cp -r Backgrounds ~/Pictures/
+}
