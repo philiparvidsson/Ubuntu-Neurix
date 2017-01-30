@@ -9,12 +9,12 @@ The installation is configurable to a great extent; you decide what parts of Neu
 Installation
 ============
 1. Clone this repository.
-2. Chdir into the neurix directory.
+2. Chdir into the Neurix directory.
 3. Type :code:`./install` to install.
 
 Alternatively, you can copy and paste the following line of text into a terminal to automatically clone the repository and run the installation:
 
-:code:`cd ~ && sudo apt install git -qqy && git clone https://github.com/philiparvidsson/neurix.git && cd neurix && ./install`
+:code:`cd ~ && sudo apt install git -qqy && git clone https://github.com/philiparvidsson/Ubuntu-Neurix.git && cd Ubuntu-Neurix && ./install`
 
 *NOTE: You should not run the installation script with sudo—the script will automatically ask for sudo permissions and let you enter your password when required.*
 
